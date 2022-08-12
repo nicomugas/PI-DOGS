@@ -1,0 +1,37 @@
+.container {
+    margin: 50px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 90%;
+    /* background-color: #2f1d58; */
+    /* height: 80vh; */
+    overflow: auto;
+    flex-direction: row;
+    color: white;
+}
+
+.containerdiv {
+    width: 400px;
+    height: 500px;
+    margin: 8px;
+    background-color: rgba(21, 23, 24, 0.781); 
+}
+
+.divimg{
+    padding: 50px;
+    border-radius: 20%;
+}
+
+.chip {
+    display: inline-block;
+    padding: 0 25px;
+    height: 30px;
+    font-size: 15px;
+    line-height: 30px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+    color: #000;
+  }

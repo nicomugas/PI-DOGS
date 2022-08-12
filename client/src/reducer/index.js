@@ -1,10 +1,11 @@
-import { GET_DOGS, GET_DOG, GET_DETAIL, FILTER_BY_DATA_SOURCE, GET_TEMPERAMENTS, FILTER_BY_TEMPERAMENT, ORDER_BY_NAME, ORDER_BY_WEIGHT } from '../actions';
+import { GET_DOGS, GET_DOG, GET_DETAIL, FILTER_BY_DATA_SOURCE, GET_TEMPERAMENTS, FILTER_BY_TEMPERAMENT, ORDER_BY_NAME, ORDER_BY_WEIGHT, SET_ERROR, CLEAR_ERROR } from '../actions';
 
 const initialState = {
     dogs: [],
     allDogs: [],
     temperaments: [],
-    dogDetail:[]
+    dogDetail: [],
+    errors: undefined
 }
 
 function rootReducer(state = initialState, action) {
@@ -19,14 +20,14 @@ function rootReducer(state = initialState, action) {
         case GET_DOG:
             return {
                 ...state,
-                dogs: action.payload,               
+                dogs: action.payload,
 
             }
-        
-        case GET_DETAIL: 
+
+        case GET_DETAIL:
             return {
                 ...state,
-                dogDetail: action.payload                
+                dogDetail: action.payload
             }
 
         case FILTER_BY_DATA_SOURCE:
@@ -63,11 +64,13 @@ function rootReducer(state = initialState, action) {
                 }
             }
 
-            return {
+         return {
                 //return funciona correcto
                 ...state,
                 dogs: DogsFilter
             }
+
+      
 
         case ORDER_BY_NAME:
             const allDogsOrder = [...state.dogs]
@@ -120,6 +123,18 @@ function rootReducer(state = initialState, action) {
             };
 
 
+            case SET_ERROR:
+                
+                return {
+                    ...state,
+                    errors: action.payload
+                };
+
+            case CLEAR_ERROR:
+                return {
+                    ...state,
+                    errors:undefined
+                }
 
 
         // return {

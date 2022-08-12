@@ -1,0 +1,41 @@
+.searchBar {
+
+    /*border: solid 0.5px #edede9;*/
+    width: fit-content;
+    /*se ajusta a ancho contenido*/
+    text-align: initial;
+    padding-top: 5px;
+
+
+}
+
+.input {
+    border: none;
+    padding: 9px;
+    border: rgb(54, 219, 68);
+    border-radius: 4px;
+    width: 150px;
+    background-color: white;
+    opacity: 0.8;
+    height: 20px ;
+
+}
+
+.input:focus {
+    outline: none;
+}
+
+
+
+.submit {
+    background-color: #1a1d;
+    border: none;
+    color: white;
+    padding: 11px 0px;
+    text-decoration: none;
+    margin: 7px 1px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 60px;
+    padding-bottom: 12px;
+}

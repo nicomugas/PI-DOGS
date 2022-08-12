@@ -1,0 +1,105 @@
+/*
+.container {
+    /* box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px; */
+/* box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px; */
+/*
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+   color: white;
+    padding-top: 10px;
+    background-color: rgb(24, 23, 23);
+    opacity: 0.8;
+    border-radius: 10%;
+    margin-top: 20px;
+    margin: 5px;
+
+}
+
+.divtitle {
+    padding-bottom: 10px;
+}
+.chip {
+    display: inline-block;
+    padding: 0 25px;
+    height: 30px;
+    font-size: 10px;
+    line-height: 30px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+    color: black;
+  }
+  */
+
+.container {
+
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    color: white;
+
+    /* padding-top: 25px;
+    margin: 25px; */
+    background-color: rgb(24, 23, 23);
+    opacity: 0.8;
+    border-radius: 10%; 
+
+    background-size: 280px 280px;
+    position: relative;
+
+    width: 280px;
+    height: 280px;
+
+}
+
+.divgradient {
+
+    background: rgb(5, 66, 96);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 0) 50%, rgba(18, 201, 219, 0.75) 100%);
+    /* background: linear-gradient(0deg, rgba(3,172,254,0.848354341736695) 0%, rgba(255,255,255,1) 50%); */
+    height: 100%;
+    width: 100%;
+     border-radius: 10%;
+
+}
+
+.chip {
+    display: inline-table;
+    padding: 0 15px;
+    height: 20px;
+    font-size: 10px;
+    line-height: 20px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+
+    color: black;
+}
+
+.chips {
+    position: absolute;
+    bottom: 1px;
+    
+}
+
+.divtitlename {
+    position: relative;
+    font-weight: bold;
+    bottom: 1px;
+    background-color: black;
+    opacity: 0.5;
+    border-top-left-radius: 55px ;
+    border-top-right-radius: 55px; 
+
+}
+
+.name {
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+
+}
+
+.weigth {
+    font-size: 9px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    margin-left:  15px;
+}

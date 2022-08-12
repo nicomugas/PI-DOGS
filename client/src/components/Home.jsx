@@ -1,18 +1,17 @@
 import React from "react";
-import SearchBar from "./SearchBar";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getDogs, filterByDataSource, getTemperaments, filterByTemperament, orderByName, orderByWeight } from "../actions";
 import DogCard from './DogCard';
 import Pagination from "./Pagination";
-import { Link } from "react-router-dom";
 import s from "./Home.module.css";
+import  ErrorMessage  from "./ErrorMessage";
 
 export default function Home() {
     const dispatch = useDispatch();
     const alldogs = useSelector((state) => state.dogs);
     const allTemper = useSelector((state) => state.temperaments)
-    const [orden, setOrden] = useState('')
+    //const [orden, setOrden] = useState('')
     //Paginado
     const [paginaActual, setPaginaActual] = useState(1) // me posiciono en primera pagina.
     // const [dogsPorPagina, setDogsPorPagina] = useState(8) // indico cantidad de DogCard por pagina
@@ -22,6 +21,11 @@ export default function Home() {
 
     const dogsaMostrar = alldogs.slice(indicePrimerDog, indiceUltimoDog)
 
+    
+
+    const errors = useSelector((state)=>state.errors)
+
+    console.log('errors: ' + errors)
     const paginado = (nroPagina) => {
         setPaginaActual(nroPagina)
     }
@@ -35,6 +39,7 @@ export default function Home() {
     function handleFilterByDataSource(e) {
         e.preventDefault();
         dispatch(filterByDataSource(e.target.value))
+        setPaginaActual(1);
     }
 
     function handleFilterByTemperament(e) {
@@ -46,65 +51,85 @@ export default function Home() {
         e.preventDefault();
         dispatch(orderByName(e.target.value));
         setPaginaActual(1);
-        setOrden(e.target.value)
+       // setOrden(e.target.value)
     }
 
-    function handleOrderByWeight(e){
+    function handleOrderByWeight(e) {
         e.preventDefault();
         dispatch(orderByWeight(e.target.value));
-        
+
     }
     return (
-        <div >
-            <h1>ALL DOGS</h1>
-            <Link to='/NewBreed'>Create New Breed</Link>
-            <SearchBar></SearchBar>
-            <div>
-                <select onChange={e => handleOrderByName(e)}>
-                    <option value='ALL'>Order by Name</option>
-                    <option value='ASC'>Asc</option>
-                    <option value='DESC'>Desc</option>
-                </select>
-                <select  onChange={e => handleOrderByWeight(e)}>
-                    <option value='ALL'>Order by Weight</option>
-                    <option value='WMIN'>min weight</option>
-                    <option value='WMAX'>max weight</option>
-                </select>
+        <div className={s.container}>
+            
+          
+            
+            <div className={s.FlexContainer}>
+                
+                <div className={s.FlexContainerdiv}>
+                   <p className={s.titulo}>FILTERS</p>
+                    <select onChange={e => handleFilterByTemperament(e)} className={s.selectcss}>
+                        <option  /*disabled selected defaultValue*/>Temperaments</option>
+                        <option value="ALL">All</option>
+                        {
+                            allTemper?.map(t =>
+                            (
+                                t.name.length ?
+                                    <option key={t.id} value={t.name}>{t.name}</option>
+                                    : null
 
-                <select onChange={e => handleFilterByTemperament(e)}>
-                    <option  /*disabled selected defaultValue*/>Temperaments</option>
-                    <option value="ALL">All</option>
-                    {
-                        allTemper?.map(t =>
-                        (
-                            t.name.length ?
-                                <option key={t.id} value={t.name}>{t.name}</option>
-                                : null
-
-                        ))
-                    }
-                </select>
-
-                <select onChange={e => handleFilterByDataSource(e)}>
-                    <option value='ALL'>All</option>
-                    <option value='EXIST'>Existing Breeds</option>
-                    <option value='OWN'>Own Breeds</option>
-                </select>
-
+                            ))
+                        }
+                    </select>
+                    
+                    <select onChange={e => handleFilterByDataSource(e)} className={s.selectcss}>
+                        <option value='ALL'>Data Source</option>
+                        <option value='EXIST'>Existing Breeds</option>
+                        <option value='OWN'>Own Breeds</option>
+                    </select>
+                </div>
+                        
+                <div className={s.FlexContainerdiv} >
+                <p className={s.titulo}>ORDERS</p>
+                    <select onChange={e => handleOrderByName(e)} className={s.selectcss}>
+                        <option value='ALL'>by Name</option>
+                        <option value='ASC'>Asc</option>
+                        <option value='DESC'>Desc</option>
+                    </select>
+                    
+                    <select onChange={e => handleOrderByWeight(e)} className={s.selectcss}>
+                        <option value='ALL'>by Weight</option>
+                        <option value='WMIN'>min weight</option>
+                        <option value='WMAX'>max weight</option>
+                    </select>
+                </div>
             </div>
+            <div className={s.pagination}>
+
             <Pagination
                 dogsPorPagina={dogsPorPagina}
                 allDogs={alldogs.length}
                 paginado={paginado}
             />
-            <div className={s.container}>
-                {dogsaMostrar && dogsaMostrar.map(dog => {
+            </div>
+            <div className={s.containerDogCard}>
+
+            {errors !== undefined ?
+                          
+                  <ErrorMessage/>
+               
+               
+                :
+                
+                dogsaMostrar && dogsaMostrar.map(dog => {
                     return (
-                    <Link to={"DogDetail/"+ dog.id}>
-                    <DogCard name={dog.name} imageurl={dog.imgsrc} tempers={dog.tempers} temper={dog.tempers} weight={dog.weight} key={dog.id} id={dog.id} />
-                    </Link>
-                    )
-                })}
+                        
+                        // <Link to={"DogDetail/"+ dog.id}>
+                        <DogCard name={dog.name} imageurl={dog.imgsrc} tempers={dog.tempers} temper={dog.tempers} weight={dog.weight} key={dog.id} id={dog.id} />
+                        //  </Link>
+                    ) 
+                })
+            }
             </div>
         </div>
 

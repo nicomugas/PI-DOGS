@@ -6,12 +6,21 @@ export const GET_TEMPERAMENTS = 'GET_TEMPERAMENTS';
 export const FILTER_BY_DATA_SOURCE = 'FILTER_BY_DATA_SOURCE';
 export const FILTER_BY_TEMPERAMENT = 'FILTER_BY_TEMPERAMENT';
 export const ORDER_BY_NAME = 'ORDER_BY_NAME';
-export const ORDER_BY_WEIGHT = 'ORDER_BY_WEIGHT'
+export const ORDER_BY_WEIGHT = 'ORDER_BY_WEIGHT';
+export const SET_ERROR = 'SET_ERROR';
+export const CLEAR_ERROR = 'CLEAR_ERROR'
+
 
 export function getDogs() {
     return async function (dispatch) {
-        var json = await axios.get("http://localhost:3001/dogs");
-        return dispatch({ type: GET_DOGS, payload: json.data })
+        try {
+            var json = await axios.get("http://localhost:3001/dogs");
+            return dispatch({ type: GET_DOGS, payload: json.data })
+        }
+        catch (error) {
+            return dispatch({ type: SET_ERROR, payload: error })
+
+        }
     }
 }
 
@@ -21,7 +30,12 @@ export function getDog(name) {
             var json = await axios.get("http://localhost:3001/dogs?name=" + name);
             return dispatch({ type: GET_DOG, payload: json.data });
 
-        } catch (error) { console.log(error) }
+        } catch (error) 
+        {
+            return dispatch({ type: SET_ERROR, payload: error })
+        } 
+            
+
     }
 }
 
@@ -32,7 +46,11 @@ export function getDetail(id) {
             var json = await axios.get("http://localhost:3001/dogs/" + id);
             return dispatch({ type: GET_DETAIL, payload: json.data });
 
-        } catch (error) { console.log(error) }
+        } catch (error) {
+            return dispatch({ type: SET_ERROR, payload: error })
+
+        }
+
     }
 }
 
@@ -76,11 +94,15 @@ export function orderByWeight(payload) {
     }
 }
 
-export function CreateDog(payload){
-    return async  function(dispatch) {
-        const sendinfo = await axios.post("http://localhost:3001/dogs/" , payload)
+export function CreateBreed(payload) {
+    return async function (dispatch) {
+        const sendinfo = await axios.post("http://localhost:3001/dogs/", payload)
         return sendinfo
 
     }
 
+}
+
+export function ClearError() {
+    return { type: CLEAR_ERROR }
 }

@@ -31,7 +31,7 @@ module.exports = (sequelize) => {
     },
 
     imgsrc: {
-      type: DataTypes.STRING(500)
+      type: DataTypes.STRING(1500)
     }
 
   });

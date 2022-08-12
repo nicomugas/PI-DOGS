@@ -1,0 +1,174 @@
+/* .container {
+ 
+ padding-top: 25px;
+  margin: 300px;
+  color: white;
+  font-size: 12px;
+  margin-top: 60px;
+  background-color: black;
+  opacity: 0.77;
+  width: 800px;
+  height: 500px; 
+  border-radius: 10px;
+
+}
+
+.formcontainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+} */
+
+.FlexContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  margin-left: 350px;
+  width: 45%;
+  height: 45px;
+  overflow: auto;
+  flex-direction: row;
+  color: white;
+  background-color: black;
+  opacity: 0.77;
+  border-radius: 10px;
+}
+
+.FlexContainer div {
+  width: 300px;
+  height: 30px;
+  margin: 5px;
+  padding-top: 5px;
+  
+  color: white;
+}
+
+
+.FlexContainerError {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  margin-left: 350px;
+  width: 45%;
+  height: 24px;
+  overflow: auto;
+  flex-direction: row;
+  color: white;
+  background-color: black;
+  opacity: 0.77;
+  border-radius: 10px;
+}
+
+.FlexContainerError div {
+  width: 300px;
+  height: 15px;
+  margin: 3px;
+  padding-top: 3px;
+  font-size: 9px;
+  color: red;
+}
+
+.FlexContainerArea {
+  display: flex;
+
+  margin-left: 350px;
+  width: 45%;
+  height: 100px;
+  overflow: auto;
+  flex-direction: row;
+  color: white;
+  background-color: black;
+  opacity: 0.77;
+  border-radius: 10px;
+  
+}
+
+.FlexContainerArea div {
+  width: 100%;
+  height: 80px;
+  margin: 3px;
+  padding-top: 3px;
+  font-size: 9px;
+  color: red;
+  
+}
+
+
+.title{
+  margin-top: 50px;
+  color: white;
+}
+
+.chip {
+    display:inline-block;
+    padding: 0 40px;
+    height: 30px;
+    font-size: 15px;
+    line-height: 30px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+    color: #000;
+    margin: 2px;
+    
+ 
+  }
+
+  .closebtn {
+    padding-left: 10px;
+    color: #888;
+    font-weight: bold;
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  
+.closebtn:hover {
+    color: #000;
+  }
+  
+ .divform{
+  width: 600px;
+  border: 1px solid white;
+
+ }
+
+ .inputlarge{
+  width: 290px;
+  height: 25px;
+  border-radius: 10px;
+  border: 0px;
+ }
+
+ .inputsmall{
+  width: 50px;
+  height: 25px;
+  border-radius: 10px;
+  border: 0px;
+
+ }
+
+ .divtemperaments{
+  height: 80px;
+  width: 600px;
+  border: 1px solid white;
+  overflow-y: auto;
+ }
+
+ .spannamelarge{
+  width: 20%;
+  border: 1px green;
+  text-align: left;
+ }
+ .spaninputlarge{
+  width: 60%;
+ }
+.spanerror{
+  width: 20%;
+  color: red;
+}
