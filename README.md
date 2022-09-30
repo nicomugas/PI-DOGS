@@ -2,7 +2,8 @@
 
 # Individual Project - Henry Dogs
 
-<img height="200" src="./dog.png" />
+Proyecto realizado en forma individual para la carrera de Full Stack Developer de Henry. 
+
 
 ## Objetivos del Proyecto
 
@@ -10,46 +11,12 @@
 - Afirmar y conectar los conceptos aprendidos en la carrera.
 - Aprender mejores prácticas.
 - Aprender y practicar el workflow de GIT.
-- Usar y practicar testing.
+
 
 ## Horarios y Fechas
 
-El proyecto tendrá una duración máxima de tres semanas. En el caso de que completan todas las tareas antes de dicho lapso podrán avisar a su Instructor para coordinar una fecha de presentación del trabajo (DEMO).
+El proyecto tendrá una duración máxima de tres semanas.
 
-## Comenzando
-
- 1. Forkear el repositorio para tener una copia del mismo en sus cuentas
- 2. Clonar el repositorio en sus computadoras para comenzar a trabajar
-
-Tendrán un `boilerplate` con la estructura general tanto del servidor como de cliente.
-
-__IMPORTANTE:__ Es necesario contar minimamente con la última versión estable de Node y NPM. Asegurarse de contar con ella para poder instalar correctamente las dependecias necesarias para correr el proyecto.
-
-Actualmente las versiónes necesarias son:
-
-- __Node__: 12.18.3 o mayor
-- __NPM__: 6.14.16 o mayor
-
-Para verificar que versión tienen instalada:
-
-```bash
-node -v
-npm -v
-```
-
-__ACLARACIÓN:__ Las dependencias actuales se encuentran en las versiones que venimos trabajando durante el bootcamp.
-
-Versiones:
-
-- __react__: 17.0.1
-- __react-dom__: 17.0.1
-- __react-router-dom__: 5.2.0
-- __redux__: 4.0.5
-- __react-redux__: 7.2.3
-
-Está permitido, __bajo su responsabilidad__, actualizar las dependencias a versiones más actuales.
-
-> __IMPORTANTE:__ Versiones mas actuales podrían presentar configuraciones diferentes respecto a las versiones en las que venimos trabajando durante el bootcamp.
 
 ## BoilerPlate
 
@@ -63,11 +30,6 @@ DB_PASSWORD=passwordDePostgres
 DB_HOST=localhost
 ```
 
-Reemplazar `usuariodepostgres` y `passwordDePostgres` con tus propias credenciales para conectarte a postgres. Este archivo va ser ignorado en la subida a github, ya que contiene información sensible (las credenciales).
-
-Adicionalmente será necesario que creen desde psql una base de datos llamada `dogs`
-
-El contenido de `client` fue creado usando: Create React App.
 
 ## Enunciado
 
@@ -77,25 +39,21 @@ a idea general es crear una aplicación en la cual se puedan ver distintas razas
 - Filtrarlos / Ordenarlos
 - Agregar nuevos perros
 
-__IMPORTANTE__: Para poder utilizar esta API externa es necesario crearse una cuenta para obtener una API Key que luego debera ser incluida en todos los request que hagamos a rawg simplemente agregando `?api_key={YOUR_API_KEY}` al final de cada endpoint. Agregar la clave en el archivo `.env` para que la misma no se suba al repositorio por cuestiones de seguridad y utilizarla desde allí.
-
 __IMPORTANTE__: Para las funcionalidades de filtrado y ordenamiento NO pueden utilizar los endpoints de la API externa que ya devuelven los resultados filtrados u ordenados sino que deben realizarlo ustedes mismos. En particular alguno de los ordenamientos o filtrados debe si o si realizarse desde el frontend.
+ No se permitirá utilizar librerías externas para aplicar estilos a la aplicación. Tendrán que utilizar CSS con algunas de las opciones que vimos en dicha clase (CSS puro, CSS Modules o Styled Components)
 
 ### Únicos Endpoints/Flags que pueden utilizar
 
 - GET <https://api.thedogapi.com/v1/breeds>
 - GET <https://api.thedogapi.com/v1/breeds/search?q={raza_perro}>
 
-### Requerimientos mínimos
 
-A continuación se detallaran los requerimientos mínimos para la aprobación del proyecto individial. Aquellos que deseen agregar más funcionalidades podrán hacerlo. En cuanto al diseño visual no va a haber wireframes ni prototipos prefijados sino que tendrán libertad de hacerlo a su gusto pero tienen que aplicar los conocimientos de estilos vistos en el curso para que quede agradable a la vista.
-
-__IMPORTANTE__: No se permitirá utilizar librerías externas para aplicar estilos a la aplicación. Tendrán que utilizar CSS con algunas de las opciones que vimos en dicha clase (CSS puro, CSS Modules o Styled Components)
+__IMPORTANTE__:
 
 #### Tecnologías necesarias
 
-- [ ] React
-- [ ] Redux
+- [] React
+- [] Redux
 - [ ] Express
 - [ ] Sequelize - Postgres
 
@@ -186,8 +144,26 @@ __IMPORTANTE__: No está permitido utilizar los filtrados, ordenamientos y pagin
   - Obtener todos los temperamentos posibles
   - En una primera instancia deberán obtenerlos desde la API externa y guardarlos en su propia base de datos y luego ya utilizarlos desde allí
 
-## Testing
+<hr>
+## IMAGENES DEL PROYECTO FINALIZADO
 
-- [ ] Al menos tener un componente del frontend con sus tests respectivos
-- [ ] Al menos tener una ruta del backend con sus tests respectivos
-- [ ] Al menos tener un modelo de la base de datos con sus tests respectivos
+<H2>LANDING PAGE</H2>
+
+![image](https://user-images.githubusercontent.com/97762358/192616598-e5e32961-9945-44ec-96d6-b936696ba439.png)
+
+<H2>HOME PAGE</H2>
+
+![image](https://user-images.githubusercontent.com/97762358/192616914-a44d9a3f-e5c0-4aaf-9ee1-96b6fbd94f10.png)
+
+
+<H2>CREATE</H2>
+
+![image](https://user-images.githubusercontent.com/97762358/192617075-906f2a87-bdc5-4331-85a5-ac0030234d4d.png)
+
+<H2>DETAIL</H2>
+
+![image](https://user-images.githubusercontent.com/97762358/192617369-a11f5688-e46b-481a-9f31-5878940eb8f0.png)
+
+
+
+
