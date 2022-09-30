@@ -15,7 +15,7 @@ const {API_URL="http://localhost:3001"} = process.env;
 export function getDogs() {
     return async function (dispatch) {
         try {
-            var json = await axios.get(API_URL + "/dogs");
+            var json = await axios.get(API_URL + "/dogs"); 
             return dispatch({ type: GET_DOGS, payload: json.data })
         }
         catch (error) {
