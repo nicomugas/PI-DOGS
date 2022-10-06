@@ -74,8 +74,8 @@ export default function Home() {
                         {
                             allTemper?.map(t =>
                             (
-                                t.name.length ?
-                                    <option key={t.id} value={t.name}>{t.name}</option>
+                                t?.name.length ?
+                                    <option key={t?.id} value={t?.name}>{t?.name}</option>
                                     : null
 
                             ))
