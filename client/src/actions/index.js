@@ -10,7 +10,7 @@ export const ORDER_BY_WEIGHT = 'ORDER_BY_WEIGHT';
 export const SET_ERROR = 'SET_ERROR';
 export const CLEAR_ERROR = 'CLEAR_ERROR'
 
-const {API_URL="http://localhost:3001"} = process.env;
+const {API_URL} = process.env;
 
 export function getDogs() {
     return async function (dispatch) {
