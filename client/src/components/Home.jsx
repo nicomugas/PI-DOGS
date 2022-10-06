@@ -121,7 +121,7 @@ export default function Home() {
                
                 :
                 
-                dogsaMostrar && dogsaMostrar.map(dog => {
+                dogsaMostrar && dogsaMostrar?.map(dog => {
                     return (
                         
                         // <Link to={"DogDetail/"+ dog.id}>
