@@ -125,7 +125,7 @@ export default function Home() {
                     return (
                         
                         // <Link to={"DogDetail/"+ dog.id}>
-                        <DogCard name={dog.name} imageurl={dog.imgsrc} tempers={dog.tempers} temper={dog.tempers} weight={dog.weight} key={dog.id} id={dog.id} />
+                        <DogCard name={dog?.name} imageurl={dog?.imgsrc} tempers={dog?.tempers} temper={dog?.tempers} weight={dog?.weight} key={dog?.id} id={dog?.id} />
                         //  </Link>
                     ) 
                 })
